@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace CollectionsMasterConsoleUI
 {
@@ -13,14 +14,17 @@ namespace CollectionsMasterConsoleUI
 
             #region Arrays
             //TODO: Create an integer Array of size 50
-            
+            var numbers = new int[50];
+
 
             //TODO: Create a method to populate the number array with 50 random numbers that are between 0 and 50
             
 
             //TODO: Print the first number of the array
+            Console.WriteLine(numbers[0]);
 
-            //TODO: Print the last number of the array            
+            //TODO: Print the last number of the array
+            Console.WriteLine(numbers[49]);
 
             Console.WriteLine("All Numbers Original");
             //UNCOMMENT this method to print out your numbers from arrays or lists
@@ -125,7 +129,13 @@ namespace CollectionsMasterConsoleUI
 
         private static void Populater(int[] numbers)
         {
-            Random rng = new Random();
+            var rng = new Random();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                
+                numbers[i] = rng.Next(0, 50);
+            }
+           
 
         }        
 
